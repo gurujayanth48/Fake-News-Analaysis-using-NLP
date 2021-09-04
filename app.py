@@ -2,6 +2,7 @@
 
 import flask
 from flask import Flask, request, render_template
+from gevent.pywsgi import WSGIServer
 from flask_cors import CORS
 import pickle
 import os
@@ -34,8 +35,10 @@ def predict():
     print(pred)
     #pred = int(pred[0][0])
     return render_template('main.html', y='The news is "{}"'.format(pred[0]))
-
+port = os.getenv('VCAP_APP_PORT', '8080')
 if __name__=="__main__":
-    port = int(os.environ.get('PORT',5000))
-    app.run(port=port,debug=True,use_reloader=False)
+    app.secret_key = os.urandom(12)
+    #port = int(os.environ.get('PORT',5000))
+    #app.run(port=port,debug=True,use_reloader=False)
+    app.run(debug=True, host='0.0.0.0', port=port)
     
