@@ -1,7 +1,0 @@
-application
-
-
--name: Python Flask App OYUGV 2021-08-13
-random-route: true
-memory: 512M
-disk_quota: 1.5G
