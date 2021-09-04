@@ -1,0 +1,15 @@
+Flask-Cors==3.0.8
+Flask==1.1.1
+requests
+Werkzeung
+numpy
+newspaper3k
+nltk
+
+In nltk download the below libraries:
+brown
+punkt
+maxent_treebank_pos_tagger
+movie_reviews
+wordnet
+stopwords
